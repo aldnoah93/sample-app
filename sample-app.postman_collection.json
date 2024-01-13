@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "ddf8cd61-3ade-4acd-aad9-188cadabf56b",
+		"_postman_id": "367e89f1-2554-4672-ab98-58248e792103",
 		"name": "sample-app",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30293094"
+		"_exporter_id": "2494307"
 	},
 	"item": [
 		{
@@ -90,7 +90,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"id\": \"4; Select * from posts\",\r\n    \"title\": \"Test 4\",\r\n    \"text\": \"This is a post.\"\r\n}",
+									"raw": "{\r\n    \"id\": \"4 OR EXISTS(SELECT 1)\",\r\n    \"title\": \"Test 4\",\r\n    \"text\": \"This is a post.\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"

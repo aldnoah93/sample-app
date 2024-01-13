@@ -1,9 +1,8 @@
 import "reflect-metadata"
 import { DataSource } from "typeorm"
-import dotenv from 'dotenv';
 
 if(process.env.POSTGRES_HOST === undefined) {
-    dotenv.config({ path: '.env' });
+    require('dotenv').config({ path: '.env' });
 }
 
 export const AppDataSource = new DataSource({

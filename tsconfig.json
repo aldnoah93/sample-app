@@ -110,6 +110,7 @@
     "src/**/*"
   ],
   "exclude": [
-    "src/database/migrations/*"
+    "src/database/migrations/*",
+    "src/database/seed/*"
   ]
 }
