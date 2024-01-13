@@ -18,6 +18,8 @@ We need to create a `.env` file in the project folder, where we need the the fol
     PGADMIN_EMAIL=pg@admin.com
     PGADMIN_PASSWORD=ThisShouldBeASecurePassword!
     PGADMIN_PORT=5050
+    #Database Seed
+    POST_SEEDS=50
 
 Then, we will need to use docker compose to run services this app depends on. We need docker installed and running on the machine. Open a terminal and run `docker compose --env-file .env up --detach` 
 To apply existing database migrations, run `npm run migration:run`
