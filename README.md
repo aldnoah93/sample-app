@@ -9,11 +9,15 @@ We need to create a `.env` file in the project folder, where we need the the fol
     PORT=3000
     #Database variables
     POSTGRES_HOST=localhost
-    POSTGRES_PORT=5433
+    POSTGRES_PORT=5432
     POSTGRES_USER=sample-app
-    POSTGRES_PASSWORD=ThisIsASecurePassword!
+    POSTGRES_PASSWORD=ThisShouldBeASecurePassword!
     POSTGRES_DB=sample-app
     POSTGRES_LOGGING=true
+    #pgadmin
+    PGADMIN_EMAIL=pg@admin.com
+    PGADMIN_PASSWORD=ThisShouldBeASecurePassword!
+    PGADMIN_PORT=5050
 
 Then, we will need to use docker compose to run services this app depends on. We need docker installed and running on the machine. Open a terminal and run `docker compose --env-file .env up --detach` 
 To apply existing database migrations, run `npm run migration:run`

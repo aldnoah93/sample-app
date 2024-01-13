@@ -12,6 +12,26 @@ services:
       - ${POSTGRES_PORT}:5432
     volumes:
       - postgres_db:/data/postgres
+      - postgres_db:/var/lib/postgresql/data
+    networks:
+      - services_network
+
+  postgres_admin:
+    image: dpage/pgadmin4:8.2
+    depends_on:
+      - postgres
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=${PGADMIN_EMAIL}
+      - PGADMIN_DEFAULT_PASSWORD=${PGADMIN_PASSWORD}
+    ports:
+      - ${PGADMIN_PORT}:80
+    volumes:
+      - pg_admin_data:/var/lib/pgadmin
+    networks:
+      - services_network
   
 volumes:
   postgres_db: {}
+  pg_admin_data: {}
+networks:
+  services_network:
