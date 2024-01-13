@@ -26,6 +26,3 @@ To apply existing database migrations, run `npm run migration:run`
 To revert a migration, run `npm run migration:revert`
 To create a migration, run `npm run migration:generate ./src/database/migrations/<migration name>`
 To run for development, run `npm dev`
-
-**Pending to do**
-Fix DataSource in data-source.ts for build 

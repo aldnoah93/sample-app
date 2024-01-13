@@ -1,3 +1,4 @@
+import { join } from "path";
 import "reflect-metadata"
 import { DataSource } from "typeorm"
 
@@ -14,7 +15,7 @@ export const AppDataSource = new DataSource({
     database: process.env.POSTGRES_DB || 'postgres',
     synchronize: false,
     logging: process.env.POSTGRES_LOGGING === 'true',
-    entities: ['{dist,src}/**/*.entity.{ts,js}'],
-    migrations: ['{dist,src}/database/migrations/*.{ts,js}'],
+    entities: [join(__dirname, '**', '*.entity.{ts,js}')], // {dist,src}/**/*.entity.{ts,js}
+    migrations: [join(__dirname, 'database', 'migrations','*.{ts,js}')], // {dist,src}/database/migrations/*.{ts,js}
     subscribers: [],
 });
