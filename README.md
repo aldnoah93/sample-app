@@ -26,3 +26,6 @@ To apply existing database migrations, run `npm run migration:run`
 To revert a migration, run `npm run migration:revert`
 To create a migration, run `npm run migration:generate ./src/database/migrations/<migration name>`
 To run for development, run `npm dev`
+
+**To do**
+Fix AppDataSource entities and migrations for `npm run start` loading files error.

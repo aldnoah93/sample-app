@@ -13,7 +13,8 @@ const options: DataSourceOptions & SeederOptions = {
     password: process.env.POSTGRES_PASSWORD || 'postgres',
     database: process.env.POSTGRES_DB || 'postgres',
     entities: ['{dist,src}/**/*.entity.{ts,js}'],
-  // additional config options brought by typeorm-extension
+    migrations: ['{dist,src}/database/migrations/*.{ts,js}'],
+    // additional seed config 
     factories: [PostsFactory],
     seeds: [MainSeeder],
     };
@@ -21,7 +22,6 @@ const options: DataSourceOptions & SeederOptions = {
 const dataSource = new DataSource(options);
 
 dataSource.initialize().then(async () => {
-  await dataSource.synchronize(true);
   await runSeeders(dataSource);
   process.exit();
 });
