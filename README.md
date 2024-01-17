@@ -20,6 +20,9 @@ We need to create a `.env` file in the project folder, where we need the the fol
     PGADMIN_PORT=5050
     #Database Seed
     POST_SEEDS=50
+    #Logging to loki
+    LOGGER_APP_NAME=simple-app
+    LOKI_HOST=http://localhost:3100
 
 Then, we will need to use docker compose to run services this app depends on. We need docker installed and running on the machine. Open a terminal and run `docker compose --env-file .env up --detach` 
 To apply existing database migrations, run `npm run migration:run`
