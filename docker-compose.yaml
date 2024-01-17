@@ -29,9 +29,56 @@ services:
       - pg_admin_data:/var/lib/pgadmin
     networks:
       - services_network
+
+  loki:
+    container_name: loki
+    image: grafana/loki:latest
+    networks:
+      - services_network
+    restart: unless-stopped
+    ports:
+      - "3100:3100"
+    volumes:
+      - ./servicesConfig/loki-config.yaml:/etc/loki/loki-config.yaml:ro
+      - loki_data:/data/loki
+    command: -config.file=/etc/loki/loki-config.yaml
+    depends_on:
+      - grafana
   
+  grafana:
+    image: grafana/grafana:latest
+    networks:
+      - services_network
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./servicesConfig/grafana-datasources.yaml:/etc/grafana/provisioning/datasources/datasources.yaml:ro
+    environment:
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+      - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
+      - GF_AUTH_DISABLE_LOGIN_FORM=true
+  
+  promtail:
+    container_name: promtail
+    image: grafana/promtail:latest
+    networks:
+      - services_network
+    restart: unless-stopped
+    volumes:
+      - ./servicesConfig/promtail-config.yaml:/etc/promtail/promtail-config.yaml:ro
+      # to read container labels and logs
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /var/lib/docker/containers:/var/lib/docker/containers
+    command: -config.file=/etc/promtail/promtail-config.yaml
+    depends_on:
+      - loki
+      - grafana  
 volumes:
   postgres_db: {}
   pg_admin_data: {}
+  loki_data: {}
+  grafana_data: {}
 networks:
   services_network:

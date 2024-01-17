@@ -29,7 +29,8 @@
     "reflect-metadata": "^0.2.1",
     "typeorm": "^0.3.19",
     "typeorm-extension": "^3.3.0",
-    "winston": "^3.11.0"
+    "winston": "^3.11.0",
+    "winston-loki": "^6.0.8"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
