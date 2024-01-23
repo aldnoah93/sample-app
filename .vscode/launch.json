@@ -8,9 +8,10 @@
             "name": "Launch index.ts with nodemon",
             "type": "node",
             "request": "launch",
-            "program": "${workspaceFolder}/node_modules/nodemon/bin/nodemon.js",
             "console": "internalConsole",
             "internalConsoleOptions": "openOnSessionStart",
+            "restart": true,
+            "program": "${workspaceFolder}/node_modules/nodemon/bin/nodemon.js",
             "runtimeArgs": [
                 "-r",
                 "dotenv/config",
