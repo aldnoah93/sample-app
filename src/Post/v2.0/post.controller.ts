@@ -33,7 +33,7 @@ export class PostController {
         }
         catch(e){
             Logger.error(e);
-            resp.status(500).send(e); 
+            resp.status(500).send("Cannot find record"); 
         }
     }
 
@@ -42,6 +42,22 @@ export class PostController {
             const id = parseInt(req.params.id)
             if(id === parseInt(req.body.id)){
                 const result = await PostService.update(req.body);
+                resp.status(200).send(result);
+            }
+            resp.status(400).send();
+        }
+        catch(e){
+            Logger.error(e);
+            resp.sendStatus(500);
+        }
+    }
+
+    static async delete(req:Request, resp: Response){
+        try{
+            const id = parseInt(req.params.id)
+            if(id === parseInt(req.body.id)){
+                const { id } = req.body;
+                const result = await PostService.delete(id);
                 resp.status(200).send(result);
             }
             resp.status(400).send();

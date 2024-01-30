@@ -13,17 +13,47 @@
 					"name": "v1.0",
 					"item": [
 						{
+							"name": "create-one",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Test 2\",\r\n    \"text\": \"This is a post.\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{protocol}}://{{baseUrl}}:{{port}}/v2.0/post/",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"v2.0",
+										"post",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "list-all",
 							"request": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3000/v1.0/post",
-									"protocol": "http",
+									"raw": "{{protocol}}://{{baseUrl}}:{{port}}/v1.0/post",
+									"protocol": "{{protocol}}",
 									"host": [
-										"localhost"
+										"{{baseUrl}}"
 									],
-									"port": "3000",
+									"port": "{{port}}",
 									"path": [
 										"v1.0",
 										"post"
@@ -38,16 +68,16 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3000/v1.0/post/4",
-									"protocol": "http",
+									"raw": "{{protocol}}://{{baseUrl}}:{{port}}/v1.0/post/6",
+									"protocol": "{{protocol}}",
 									"host": [
-										"localhost"
+										"{{baseUrl}}"
 									],
-									"port": "3000",
+									"port": "{{port}}",
 									"path": [
 										"v1.0",
 										"post",
-										"4"
+										"6"
 									]
 								}
 							},
@@ -68,12 +98,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:3000/v1.0/post/4",
-									"protocol": "http",
+									"raw": "{{protocol}}://{{baseUrl}}:{{port}}/v1.0/post/4",
+									"protocol": "{{protocol}}",
 									"host": [
-										"localhost"
+										"{{baseUrl}}"
 									],
-									"port": "3000",
+									"port": "{{port}}",
 									"path": [
 										"v1.0",
 										"post",
@@ -98,12 +128,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:3000/v1.0/post/4",
-									"protocol": "http",
+									"raw": "{{protocol}}://{{baseUrl}}:{{port}}/v1.0/post/4",
+									"protocol": "{{protocol}}",
 									"host": [
-										"localhost"
+										"{{baseUrl}}"
 									],
-									"port": "3000",
+									"port": "{{port}}",
 									"path": [
 										"v1.0",
 										"post",
@@ -119,17 +149,47 @@
 					"name": "v2.0",
 					"item": [
 						{
+							"name": "create-one",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Test 2\",\r\n    \"text\": \"This is a post.\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{protocol}}://{{baseUrl}}:{{port}}/v2.0/post/",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"v2.0",
+										"post",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "list-all",
 							"request": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3000/v2.0/post",
-									"protocol": "http",
+									"raw": "{{protocol}}://{{baseUrl}}:{{port}}/v2.0/post",
+									"protocol": "{{protocol}}",
 									"host": [
-										"localhost"
+										"{{baseUrl}}"
 									],
-									"port": "3000",
+									"port": "{{port}}",
 									"path": [
 										"v2.0",
 										"post"
@@ -144,42 +204,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3000/v2.0/post/4",
-									"protocol": "http",
+									"raw": "{{protocol}}://{{baseUrl}}:{{port}}/v2.0/post/4",
+									"protocol": "{{protocol}}",
 									"host": [
-										"localhost"
+										"{{baseUrl}}"
 									],
-									"port": "3000",
-									"path": [
-										"v2.0",
-										"post",
-										"4"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "add-one",
-							"request": {
-								"method": "PUT",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"title\": \"Test 2\",\r\n    \"text\": \"This is a post.\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:3000/v2.0/post/4",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "3000",
+									"port": "{{port}}",
 									"path": [
 										"v2.0",
 										"post",
@@ -196,7 +226,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"id\": 4,\r\n    \"title\": \"Test 4\",\r\n    \"text\": \"This is a post.\"\r\n}",
+									"raw": "{\r\n    \"id\": 4,\r\n    \"title\": \"Test 2\",\r\n    \"text\": \"This is a post.\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -204,12 +234,42 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:3000/v2.0/post/4",
-									"protocol": "http",
+									"raw": "{{protocol}}://{{baseUrl}}:{{port}}/v2.0/post/4",
+									"protocol": "{{protocol}}",
 									"host": [
-										"localhost"
+										"{{baseUrl}}"
 									],
-									"port": "3000",
+									"port": "{{port}}",
+									"path": [
+										"v2.0",
+										"post",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete-one",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 4\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{protocol}}://{{baseUrl}}:{{port}}/v2.0/post/4",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"port": "{{port}}",
 									"path": [
 										"v2.0",
 										"post",
@@ -222,6 +282,43 @@
 					]
 				}
 			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "protocol",
+			"value": "http",
+			"type": "string"
+		},
+		{
+			"key": "baseUrl",
+			"value": "localhost",
+			"type": "string"
+		},
+		{
+			"key": "port",
+			"value": "4000",
+			"type": "string"
 		}
 	]
 }
